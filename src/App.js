@@ -1,0 +1,49 @@
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Navbar, Sidebar, Footer } from './components'
+import {Home, SingleProduct, Cart,Checkout,Error,About,Products,Private, Auth0Wrapper} from './pages'
+
+
+function App() {
+  return (
+    <Auth0Wrapper>
+ <Router>
+<Navbar/>
+<Sidebar />
+   <Switch>
+     <Route exact path='/'>
+       <Home/>
+     </Route>
+
+     <Route exact path='/about'>
+       <About/>
+     </Route>
+     <Route exact path='/cart'>
+       <Cart/>
+     </Route>
+     <Route exact path='/products'>
+       <Products/>
+     </Route>
+
+     <Route exact path='/products/:id'>
+       <SingleProduct/>
+     </Route>
+
+     <Private exact path='/checkout'>
+       <Checkout/>
+     </Private>
+     
+     <Route path='*'>
+       <Error/>
+     </Route>
+
+   </Switch>
+   <Footer/>
+ </Router>
+ </Auth0Wrapper>
+ 
+ 
+    )
+}
+
+export default App
