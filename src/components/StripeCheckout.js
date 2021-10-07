@@ -128,10 +128,10 @@ const handleSubmit = async(ev)=>{
         {error && <div className='card-error' role='alert'>{error}</div>}
         <p className={succeeded ? 'result-message' : 'result-message hidden'}
         >Payment secceeded, see the result in your  
-        <a href={ `https://dashboard.stripe.com/text/payments` }>
+         <a href={ `https://dashboard.stripe.com/text/payments` }>
            stripe dashboard
           </a>
-          Refresh dashboard
+           Refresh dashboard
           </p>
 
     </form>
